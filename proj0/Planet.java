@@ -69,4 +69,14 @@ public class Planet {
         return sum;
 
     }
+    public void update(double t, double fx,double fy){
+        double ax=fx/this.mass;
+        double ay=fy/this.mass;
+        this.xxVel+=ax*t;
+        this.yyVel+=ay*t;
+        this.xxPos+=this.xxVel*t;
+        this.yyPos+=this.yyVel*t;
+
+
+    }
 }
