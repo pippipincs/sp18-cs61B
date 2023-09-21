@@ -45,4 +45,28 @@ public class Planet {
         double dy=p.yyPos-this.yyPos;
         return this.calcForceExertedBy(p)/this.calcDistance(p)*dy;
     }    
+    public double calcNetForceExertedByX(Planet[] planets){
+        double sum=0;
+        for(Planet p : planets){
+            if(this.equals(p)){
+                continue;
+            }
+            sum += this.calcForceExertedByX(p);
+
+        }
+        return sum;
+
+    }
+    public double calcNetForceExertedByY(Planet[] planets){
+        double sum=0;
+        for(Planet p : planets){
+            if(this.equals(p)){
+                continue;
+            }
+            sum += this.calcForceExertedByY(p);
+
+        }
+        return sum;
+
+    }
 }
